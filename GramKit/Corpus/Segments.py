@@ -1,8 +1,10 @@
 
-class Corpus():
+class Corpus(list):
     def __init__(self, corpus: list):
-        self.corpus = corpus
-        self.segments = corpus
+        self.data = corpus
+
+    def getMoreNatural(self):
+        NotImplemented
 
 
 class Segments(Corpus):
@@ -10,16 +12,16 @@ class Segments(Corpus):
         Corpus.__init__(corpus)
 
 
-class Segment():
-    def __init__(self, segment):
-        self.tokens = [x.lower() for x in segment.strip().split(" ")]
+class Segment(object):
+    def __init__(self, segment: str):
+        self.data = [x.lower() for x in segment.strip().split(" ")]
 
     def buildNGram(self, pos, n):
-        return NGram(self.tokens[max(0, pos-n): pos])
+        return NGram(self.data[max(0, pos-n): pos])
 
 
 class NGram():
-    def __init__(self, tokens):
+    def __init__(self, tokens: list):
         self.tokens = tokens
 
     def __eq__(self, otherNGram):

@@ -39,9 +39,9 @@ class CorpusStatInfo(object):
         for token in self.wordSet:
             print(f"Word: {token} occurs {self.word2Count[token]} times.")
 
-class SimpleCorpusStatInfo(Corpus):
+class SimpleCorpusStatInfo(CorpusStatInfo):
     def __init__(self):
-        Corpus.__init__(self, "simple")
+        CorpusStatInfo.__init__(self, "simple")
         self.init()
 
     def loadData(self):
@@ -57,6 +57,6 @@ class SimpleCorpusStatInfo(Corpus):
         self.append("The city lights shimmered in the distance, creating a mesmerizing view")
 
 if __name__=="__main__":
-    sc = SimpleCorpus()
+    sc = SimpleCorpusStatInfo()
     sc.printSummarization()
 
