@@ -1,5 +1,4 @@
 from GramKit.Corpus.Segments import NGram, Segment
-from GramKit.Model.NGram import NGramModel
 import numpy as np
 
 class NaturalnessModel(object):
